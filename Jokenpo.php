@@ -1,17 +1,16 @@
 <?php
 
-function escolherMao() {
-    echo "Jogador 1, escolha sua mão:\n";
+function escolherMao($jogador) {
+    echo "Jogador $jogador, escolha sua mão:\n";
     echo "1 - Pedra\n";
     echo "2 - Papel\n";
     echo "3 - Tesoura\n";
 
     $mao = (int)readline("Digite o número correspondente: ");
 
-    // Verifica se a escolha é válida
     if ($mao < 1 || $mao > 3) {
         echo "Escolha inválida! Tente novamente.\n";
-        return escolherMao(); // chama a função novamente
+        return escolherMao($jogador); // chama a função de novo
     }
 
     return $mao;
