@@ -17,10 +17,25 @@ function escolherMao() {
     return $mao;
 }
 
-// Chamada da função
-$maoJogador1 = escolherMao();
+// Jogadores escolhem suas mãos
+$maoJogador1 = escolherMao(1);
+$maoJogador2 = escolherMao(2);
 
-// Exibe a escolha
+// Array para exibir o nome da mão
 $opcoes = [1 => "Pedra", 2 => "Papel", 3 => "Tesoura"];
-echo "Você escolheu: " . $opcoes[$maoJogador1] . "\n";
 
+echo "\nJogador 1 escolheu: " . $opcoes[$maoJogador1] . "\n";
+echo "Jogador 2 escolheu: " . $opcoes[$maoJogador2] . "\n";
+
+// Decide o vencedor
+if ($maoJogador1 == $maoJogador2) {
+    echo "Empate!\n";
+} elseif (
+    ($maoJogador1 == 1 && $maoJogador2 == 3) ||
+    ($maoJogador1 == 2 && $maoJogador2 == 1) ||
+    ($maoJogador1 == 3 && $maoJogador2 == 2)
+) {
+    echo "Jogador 1 venceu!\n";
+} else {
+    echo "Jogador 2 venceu!\n";
+}
